@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --mainColor:#9f83f6;
+    --bgColor:#f8f9fa;
+}
+
+body{
+  font-family: 'El Messiri', sans-serif !important;
+  background-color:var(--bgColor)  !important;
+}
+
+* {
+  font-family: 'El Messiri', sans-serif !important;
+}

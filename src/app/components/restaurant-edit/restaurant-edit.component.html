@@ -1,0 +1,15 @@
+<div class="row gap-5 p-2">
+  @for (restaurant of restaurants; track $index) {
+  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+    <img
+      [src]="restaurant.images[0]?.image"
+      class="card-img-top"
+      alt="image not available"
+    />
+    <div class="card-body">
+      <p>{{ restaurant.name }}</p>
+    </div>
+  </a>
+
+  }
+</div>

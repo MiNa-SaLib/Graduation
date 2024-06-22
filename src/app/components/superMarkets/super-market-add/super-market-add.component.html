@@ -1,0 +1,7 @@
+<!-- <form [formGroup]="form" action="">
+  <input formControlName="image" type="file" name="" id="" />
+</form>
+<p>{{ form.get("image")?.value }}</p>
+<button (click)="send()">send</button> -->
+
+<input type="file" (change)="processFile($event)" />

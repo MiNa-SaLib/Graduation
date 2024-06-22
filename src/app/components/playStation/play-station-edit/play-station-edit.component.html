@@ -1,0 +1,15 @@
+<div class="row gap-5 p-2">
+  @for (playStation of playStation; track $index) {
+  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+    <img
+      [src]="playStation.images[0]"
+      class="card-img-top"
+      alt="image not available"
+    />
+    <div class="card-body">
+      <p>{{ playStation.name }}</p>
+    </div>
+  </a>
+
+  }
+</div>

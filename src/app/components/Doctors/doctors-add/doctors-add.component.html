@@ -1,0 +1,91 @@
+<form [formGroup]="doctorData">
+  <div class="row">
+    <div class="resData col-8">
+      <h1>بيانات <span>المطعم</span></h1>
+      <div class="row">
+        <div class="col">
+          <label for="">اسم المطعم</label>
+          <input formControlName="name" type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label for="">رقم الهاتف</label>
+          <input
+            formControlName="phoneNumber"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">التخصص</label>
+          <input
+            formControlName="specialization"
+            type="text"
+            class="form-control"
+          />
+        </div>
+        <div class="col">
+          <label for="">رابط المكان</label>
+          <input
+            formControlName="linkOfPlace"
+            type="text"
+            class="form-control"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">المدينة</label>
+          <input formControlName="city" type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label for="">الشارع</label>
+          <input formControlName="street" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">خطوط الطول</label>
+          <input formControlName="latitude" type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label for="">دوائر العرض</label>
+          <input formControlName="longitude" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">معياد فتح</label>
+          <input formControlName="startWork" type="text" class="form-control" />
+        </div>
+        <div class="col">
+          <label for="">ميعاد غلق</label>
+          <input formControlName="endWork" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">الوصف</label>
+          <textarea
+            formControlName="descriptionOfPlace"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="submit col-8">
+      <button (click)="send()" type="submit" class="btn btn-primary">
+        اضافة المطعم
+      </button>
+    </div>
+  </div>
+</form>
+<div class="bg-danger">
+  {{ doctorData.value | json }}
+  {{ doctorData.get("imageFiles")?.value }}
+</div>

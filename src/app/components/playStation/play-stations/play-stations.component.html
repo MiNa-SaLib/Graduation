@@ -1,0 +1,70 @@
+<div class="controls">
+  <a
+    class="btn btn-primary edit"
+    routerLinkActive="active"
+    [routerLink]="['playStationEdit']"
+  >
+    <svg
+      width="23"
+      height="23"
+      viewBox="0 0 23 23"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M9.85718 4.92859L12.2629 2.52267C14.5312 0.254365 18.2088 0.254365 20.4773 2.52267C22.7456 4.791 22.7456 8.46865 20.4773 10.737L18.0715 13.1429"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M13.1429 18.0714L10.7372 20.4774C8.46886 22.7457 4.7912 22.7457 2.5229 20.4774C0.254574 18.2091 0.254576 14.5314 2.5229 12.263L4.92861 9.85715"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M14.7858 8.21429L8.21436 14.7857"
+        stroke="white"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <span>تعديل بلاي ستيشن </span>
+  </a>
+  <a
+    class="btn btn-primary add"
+    routerLinkActive="active"
+    [routerLink]="['playStationAdd']"
+  >
+    <svg
+      width="25"
+      height="25"
+      viewBox="0 0 25 25"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M12.5 1.78571V23.2143"
+        stroke="#9F83F6"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <path
+        d="M1.78577 12.434H23.2143"
+        stroke="#9F83F6"
+        stroke-width="3"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+
+    <span>اضافة بلاي ستيشن </span>
+  </a>
+</div>
+
+<router-outlet></router-outlet>
