@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row logo">
+    <img src="assets/logo.png" alt="" />
+  </div>
+  <div class="row w-100">
+    <div class="col">
+      <form [formGroup]="userData" (ngSubmit)="send()">
+        <div>
+          <label for="UserName">
+            <img src="assets/avatar.png" alt="" srcset="" />
+
+            اسم المستخدم</label
+          >
+          <input
+            formControlName="UserName"
+            type="text"
+            class="form-control"
+            id="UserName"
+            placeholder="ادخل  اسم المستخدم"
+          />
+          <div
+            *ngIf="
+              userData.get('UserName')?.invalid &&
+              (userData.get('UserName')?.dirty ||
+                userData.get('UserName')?.touched)
+            "
+          >
+            <small
+              class="text-danger p-1"
+              *ngIf="userData.get('UserName')?.errors?.['required']"
+            >
+              اسم المستخدم مطلوب
+            </small>
+          </div>
+        </div>
+        <div>
+          <label for="Password">
+            <img src="assets/protection.png" alt="" srcset="" />
+            كلمة المرور</label
+          >
+          <input
+            formControlName="Password"
+            type="password"
+            class="form-control"
+            id="Password"
+            placeholder=" قم بكتابة كلمة المرور"
+          />
+          <div
+            *ngIf="
+              userData.get('Password')?.invalid &&
+              (userData.get('Password')?.dirty ||
+                userData.get('Password')?.touched)
+            "
+          >
+            <small
+              class="text-danger p-1"
+              *ngIf="userData.get('Password')?.errors?.['required']"
+            >
+              يجب ادخال كلمة المرور
+            </small>
+          </div>
+        </div>
+        <div>
+          <button
+            [disabled]="userData.invalid"
+            type="submit"
+            class="btn btn-primary form-control"
+          >
+            تسجيل الدخول
+          </button>
+        </div>
+        <div
+          *ngIf="WrongData"
+          class="alert alert-primary alert-dismissible fade show"
+          role="alert"
+        >
+          <span
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></span>
+          {{ WrongData }}
+        </div>
+
+        <script>
+          var alertList = document.querySelectorAll(".alert");
+          alertList.forEach(function (alert) {
+            new bootstrap.Alert(alert);
+          });
+        </script>
+      </form>
+    </div>
+    <div class="col image">
+      <img src="assets/VectorObject.png" alt="Login Illustration" />
+    </div>
+  </div>
+</div>

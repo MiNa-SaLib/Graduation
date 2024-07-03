@@ -1,0 +1,104 @@
+.col-8>.row>.col{
+  padding: 5px;
+
+}
+label{
+  padding: 5px;
+}
+input{
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  border: 1px solid #8E8E93;
+}
+input:focus{
+  box-shadow: none;
+}
+/*  */
+.restaurantPhoto{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--mainColor);
+  padding: 15px;
+  border-radius: 15px;
+}
+.restaurantPhoto p{
+  color: white;
+}
+input[type="file"] {
+  display: none;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #FFFFFFA1;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+.submit{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+}
+.submit button{
+  width: 100%;
+  background: var(--mainColor);
+  color: white;
+  border: none;
+  margin: 5px;
+}
+.resData{
+  background-color: #FFFFFF;
+  padding: 20px;
+  /* margin: 5px; */
+  border-radius: 15px;
+}
+.resData h1{
+  font-size: 20px;
+}
+.resData h1 span{
+  color: var(--mainColor);
+}
+.form-control{
+    padding: 6px;
+    display: block;
+    width: 100%;
+
+}
+/*  */
+
+form{
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .resphoto{
+    max-width: 300px;
+    margin: 10px;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+}
+/*
+
+*/
+.delete{
+  background-color: red !important;
+  color: white !important;
+}

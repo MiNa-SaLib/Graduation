@@ -8,7 +8,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { map } from 'rxjs';
 
-import { BrowserModule } from '@angular/platform-browser';
 import { SidebareComponent } from './components/sidebare/sidebare.component';
 
 @Component({

@@ -1,55 +1,264 @@
-<form>
-  <div class="row">
+<form [formGroup]="restaurantData">
+  <div class="row all">
     <div class="resData col-8">
       <h1>بيانات <span>المطعم</span></h1>
       <div class="row">
         <div class="col">
           <label for="">اسم المطعم</label>
-          <input #Name type="text" class="form-control" />
+          <input
+            #Name
+            formControlName="Name"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Name')?.invalid &&
+              (restaurantData.get('Name')?.dirty ||
+                restaurantData.get('Name')?.touched)
+            "
+          >
+            <small
+              class="text-danger p-1"
+              *ngIf="restaurantData.get('Name')?.errors?.['required']"
+            >
+              الاسم مطلوب
+            </small>
+          </div>
         </div>
         <div class="col">
           <label for="">رقم الهاتف</label>
-          <input #Phone type="text" class="form-control" />
+          <input
+            #Phone
+            formControlName="Phone"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Phone')?.invalid &&
+              (restaurantData.get('Phone')?.dirty ||
+                restaurantData.get('Phone')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Phone')?.errors?.['required']"
+            >
+              الرقم مطلوب
+            </small>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="">الايميل</label>
-          <input #Email type="text" class="form-control" />
+          <input
+            #Email
+            formControlName="Email"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Email')?.invalid &&
+              (restaurantData.get('Email')?.dirty ||
+                restaurantData.get('Email')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Email')?.errors?.['pattern']"
+            >
+              يجب ادخال ايميل صحيح
+            </small>
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Email')?.errors?.['required']"
+            >
+              يجب ادخال ايميل
+            </small>
+          </div>
         </div>
         <div class="col">
           <label for="">رابط المكان</label>
-          <input #LinkOfPlace type="text" class="form-control" />
+          <input
+            #LinkOfPlace
+            formControlName="LinkOfPlace"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('LinkOfPlace')?.invalid &&
+              (restaurantData.get('LinkOfPlace')?.dirty ||
+                restaurantData.get('LinkOfPlace')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('LinkOfPlace')?.errors?.['pattern']"
+            >
+              يجب ادخال رابط صحيح
+            </small>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="">المدينة</label>
-          <input #City type="text" class="form-control" />
+          <input
+            #City
+            formControlName="City"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('City')?.invalid &&
+              (restaurantData.get('City')?.dirty ||
+                restaurantData.get('City')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('City')?.errors?.['required']"
+            >
+              المدينة مطلوبة
+            </small>
+          </div>
         </div>
         <div class="col">
           <label for="">الشارع</label>
-          <input #Street type="text" class="form-control" />
+          <input
+            #Street
+            formControlName="Street"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Street')?.invalid &&
+              (restaurantData.get('Street')?.dirty ||
+                restaurantData.get('Street')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Street')?.errors?.['required']"
+            >
+              الشارع مطلوب
+            </small>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
           <label for="">خطوط الطول</label>
-          <input #Latitude type="number" class="form-control" />
+          <input
+            #Latitude
+            formControlName="Latitude"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Latitude')?.invalid &&
+              (restaurantData.get('Latitude')?.dirty ||
+                restaurantData.get('Latitude')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Latitude')?.errors?.['required']"
+            >
+              يجب تحديد خطوط الطول
+            </small>
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Latitude')?.errors?.['pattern']"
+            >
+              يجب ان يكون صحيح
+            </small>
+          </div>
         </div>
         <div class="col">
           <label for="">دوائر العرض</label>
-          <input #Longitude type="number" class="form-control" />
+          <input
+            #Longitude
+            formControlName="Longitude"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('Longitude')?.invalid &&
+              (restaurantData.get('Longitude')?.dirty ||
+                restaurantData.get('Longitude')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Longitude')?.errors?.['required']"
+            >
+              يجب تحديد دوائر العرض
+            </small>
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('Longitude')?.errors?.['pattern']"
+            >
+              يجب ان يكون صحيح
+            </small>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col">
-          <label for="">معياد فتح</label>
-          <input #StartWork type="text" class="form-control" />
+          <label for="">ميعاد فتح</label>
+          <input
+            #StartWork
+            formControlName="StartWork"
+            type="datetime-local"
+            value="2017-06-01T08:30"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('StartWork')?.invalid &&
+              (restaurantData.get('StartWork')?.dirty ||
+                restaurantData.get('StartWork')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('StartWork')?.errors?.['required']"
+            >
+              التوقيت مطلوب
+            </small>
+          </div>
         </div>
         <div class="col">
           <label for="">ميعاد غلق</label>
-          <input #EndWork type="text" class="form-control" />
+          <input
+            #EndWork
+            formControlName="EndWork"
+            type="datetime-local"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              restaurantData.get('EndWork')?.invalid &&
+              (restaurantData.get('EndWork')?.dirty ||
+                restaurantData.get('EndWork')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('EndWork')?.errors?.['required']"
+            >
+              التوقيت مطلوب
+            </small>
+          </div>
         </div>
       </div>
       <div class="row">
@@ -57,14 +266,44 @@
           <label for="">الوصف</label>
           <textarea
             #DescriptionOfPlace
+            formControlName="DescriptionOfPlace"
             class="form-control"
             id="exampleFormControlTextarea1"
             rows="3"
           ></textarea>
+          <div
+            *ngIf="
+              restaurantData.get('DescriptionOfPlace')?.invalid &&
+              (restaurantData.get('DescriptionOfPlace')?.dirty ||
+                restaurantData.get('DescriptionOfPlace')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('DescriptionOfPlace')?.errors?.['required']"
+            >
+              الوصف مطلوب
+            </small>
+          </div>
         </div>
         <div class="col">
           <h6>خدمة التوصيل</h6>
+          <div
+            *ngIf="
+              restaurantData.get('HasDelivery')?.invalid &&
+              (restaurantData.get('HasDelivery')?.dirty ||
+                restaurantData.get('HasDelivery')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="restaurantData.get('HasDelivery')?.errors?.['required']"
+            >
+              التحديد مطلوب
+            </small>
+          </div>
           <input
+            formControlName="HasDelivery"
             #HasDelivery
             type="radio"
             value="true"
@@ -73,6 +312,7 @@
           />
           <label for="flexRadioDefault1"> نعم </label>
           <input
+            formControlName="HasDelivery"
             #HasDelivery
             type="radio"
             name="HasDelivery"
@@ -83,7 +323,7 @@
         </div>
       </div>
     </div>
-    <div class="col">
+    <div class="col resphoto">
       <div class="restaurantPhoto mb-3">
         <p>صورة مصغرة</p>
         <label for="formFile" class="custom-file-upload">
@@ -136,6 +376,7 @@
           >
         </label>
         <input
+          formControlName="imageFiles"
           #imageFiles
           type="file"
           (change)="processFile($event)"
@@ -146,56 +387,14 @@
   </div>
   <div class="row">
     <div class="submit col-8">
-      <!-- <button
-        (click)="
-          send(
-            Name,
-            Email,
-            Phone,
-            LinkOfPlace,
-            DescriptionOfPlace,
-            StartWork,
-            EndWork,
-            City,
-            Street,
-            imageFiles,
-            HasDelivery,
-            Longitude,
-            Latitude
-          )
-        "
+      <button
+        [disabled]="restaurantData.invalid"
+        (click)="send()"
         type="submit"
         class="btn btn-primary"
       >
         اضافة المطعم
-      </button> -->
+      </button>
     </div>
   </div>
 </form>
-<button
-  (click)="
-    send(
-      Name,
-      Email,
-      Phone,
-      LinkOfPlace,
-      DescriptionOfPlace,
-      StartWork,
-      EndWork,
-      City,
-      Street,
-      imageFiles,
-      HasDelivery,
-      Longitude,
-      Latitude
-    )
-  "
-  type="submit"
-  class="btn btn-primary"
->
-  اضافة المطعم
-</button>
-<div class="bg-danger">
-  {{ restaurantData.value | json }}
-  {{ restaurantData.get("imageFiles")?.value }}
-</div>

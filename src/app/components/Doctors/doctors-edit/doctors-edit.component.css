@@ -1,5 +1,6 @@
 a{
   text-decoration: none;
+  width: 100% !important;
 }
 .card{
   background: transparent;
@@ -20,3 +21,39 @@ a{
 .card p{
   font-size: 40px;
 }
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+/*
+a{
+  text-decoration: none;
+  width: 100% !important;
+}
+.grid-container{
+  background: transparent;
+    border: none;
+    text-align: center;
+
+}
+.grid-container img{
+  width:250px;
+  height: 250px;
+  border: 2px solid black;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -ms-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+.grid-container p{
+  font-size: 40px;
+}
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+} */

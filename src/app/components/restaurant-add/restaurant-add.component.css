@@ -59,7 +59,7 @@ input[type="file"] {
 .resData{
   background-color: #FFFFFF;
   padding: 20px;
-  margin: 5px;
+  /* margin: 5px; */
   border-radius: 15px;
 }
 .resData h1{
@@ -68,3 +68,32 @@ input[type="file"] {
 .resData h1 span{
   color: var(--mainColor);
 }
+.form-control{
+    padding: 6px;
+    display: block;
+    width: 100%;
+
+}
+/*  */
+
+form{
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  .all{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .resphoto{
+    max-width: 300px;
+    margin: 10px;
+  }
+  .col-8 {
+    flex: 0 0 auto;
+    width: 100%;
+}
+}
+/*
+
+*/

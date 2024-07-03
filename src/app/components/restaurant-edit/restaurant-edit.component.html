@@ -1,6 +1,13 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (restaurant of restaurants; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="[
+      '/adminPanel/restaurant/restaurantEditSpecific',
+      restaurant.id
+    ]"
+  >
     <img
       [src]="restaurant.images[0]?.image"
       class="card-img-top"

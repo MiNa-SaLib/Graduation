@@ -1,8 +1,15 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (playStation of playStation; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="[
+      '/adminPanel/playStation/playStationEditSpecific',
+      playStation.id
+    ]"
+  >
     <img
-      [src]="playStation.images[0]"
+      [src]="playStation.images[0]?.image"
       class="card-img-top"
       alt="image not available"
     />

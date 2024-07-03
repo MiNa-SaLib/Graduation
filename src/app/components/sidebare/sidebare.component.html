@@ -1,5 +1,55 @@
-<ul class="list">
-  <li class="list-group-item p-1">
+<ul class="list navbar-nav">
+  <li class="list-group-item p-1 nav-item">
+    <svg
+      height="26px"
+      width="26px"
+      version="1.1"
+      id="Capa_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="-15.51 -15.51 186.16 186.16"
+      xml:space="preserve"
+      fill=""
+      stroke=""
+      stroke-width="5.429865"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="black"
+        stroke-width="15.513900000000001"
+      >
+        <g>
+          <g>
+            <path
+              style="fill: #9f83f6"
+              d="M125.967,51.533V20.314h-16.862V38.06L77.569,12.814L0,74.869h21.361v67.455h112.416v-67.45h21.361 L125.967,51.533z M125.925,134.472H97.546V82.37H57.58v52.103H29.202V71.146l48.356-38.689l48.355,38.689v63.326H125.925z"
+            ></path>
+          </g>
+        </g>
+      </g>
+      <g id="SVGRepo_iconCarrier">
+        <g>
+          <g>
+            <path
+              style="fill: #9f83f6"
+              d="M125.967,51.533V20.314h-16.862V38.06L77.569,12.814L0,74.869h21.361v67.455h112.416v-67.45h21.361 L125.967,51.533z M125.925,134.472H97.546V82.37H57.58v52.103H29.202V71.146l48.356-38.689l48.355,38.689v63.326H125.925z"
+            ></path>
+          </g>
+        </g>
+      </g>
+    </svg>
+    <a
+      routerLinkActive="active"
+      [routerLink]="['/adminPanel']"
+      routerLinkActiveOptions="{ exact: true }"
+      class="p-3"
+      >الرئيسية</a
+    >
+  </li>
+  <li class="list-group-item p-1 nav-item">
     <svg
       width="22"
       height="23"
@@ -29,7 +79,11 @@
         stroke-linejoin="round"
       />
     </svg>
-    <a routerLinkActive="active" [routerLink]="['restaurant']" class="p-3"
+    <a
+      routerLinkActive="active"
+      [routerLink]="['/adminPanel/restaurant/restaurantEdit']"
+      routerLinkActiveOptions="{ exact: true }"
+      class="p-3"
       >المطاعم</a
     >
   </li>
@@ -71,7 +125,7 @@
       </defs>
     </svg>
 
-    <a [routerLink]="['/doctors']" class="p-3">دكاترة</a>
+    <a [routerLink]="['/adminPanel/doctors']" class="p-3">دكاترة</a>
   </li>
   <li class="list-group-item p-1">
     <svg
@@ -97,7 +151,7 @@
       />
     </svg>
 
-    <a [routerLink]="['/pharmacies']" class="p-3">صيدليات</a>
+    <a [routerLink]="['/adminPanel/pharmacies']" class="p-3">صيدليات</a>
   </li>
   <li class="list-group-item p-1">
     <svg
@@ -137,7 +191,7 @@
       />
     </svg>
 
-    <a [routerLink]="['/workSpace']" class="p-3">ورك سبيس</a>
+    <a [routerLink]="['/adminPanel/workSpace']" class="p-3">ورك سبيس</a>
   </li>
   <li class="list-group-item p-1">
     <svg
@@ -203,7 +257,7 @@
       </defs>
     </svg>
 
-    <a [routerLink]="['/playStation']" class="p-3">بلاي ستيشن</a>
+    <a [routerLink]="['/adminPanel/playStation']" class="p-3">بلاي ستيشن</a>
   </li>
   <li class="list-group-item p-1">
     <svg
@@ -282,7 +336,9 @@
       </defs>
     </svg>
 
-    <a [routerLink]="['/analysisCenter']" class="p-3">معامل تحاليل </a>
+    <a [routerLink]="['/adminPanel/analysisCenter']" class="p-3"
+      >معامل تحاليل
+    </a>
   </li>
   <li class="list-group-item p-1">
     <svg
@@ -371,46 +427,6 @@
       </defs>
     </svg>
 
-    <a [routerLink]="['/superMarket']" class="p-3">سوبرماركت</a>
-  </li>
-  <li class="list-group-item p-1">
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 22 22"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M8.43676 10.3077C10.4775 10.3077 12.1318 8.65336 12.1318 6.61264C12.1318 4.57192 10.4775 2.91758 8.43676 2.91758C6.39604 2.91758 4.7417 4.57192 4.7417 6.61264C4.7417 8.65336 6.39604 10.3077 8.43676 10.3077Z"
-        stroke="black"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M1.78564 20.6539H8.43675H15.0878V19.8526C15.0761 18.7261 14.779 17.6208 14.2243 16.6403C13.6696 15.6596 12.8754 14.8356 11.9159 14.2452C10.9564 13.6547 9.86291 13.3171 8.73755 13.2638C8.63723 13.259 8.53693 13.2566 8.43675 13.2564C8.33657 13.2566 8.23627 13.259 8.13594 13.2638C7.01059 13.3171 5.91709 13.6547 4.95758 14.2452C3.9981 14.8356 3.20391 15.6596 2.64921 16.6403C2.09452 17.6208 1.79741 18.7261 1.78564 19.8526V20.6539Z"
-        stroke="black"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M14.3489 10.3077C16.3896 10.3077 18.0439 8.65336 18.0439 6.61264C18.0439 4.57192 16.3896 2.91758 14.3489 2.91758"
-        stroke="#9F83F6"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <path
-        d="M18.0439 20.654H21V19.8526C20.9882 18.7261 20.6911 17.6208 20.1364 16.6403C19.5817 15.6596 18.7875 14.8357 17.828 14.2452C17.2078 13.8635 16.5315 13.5875 15.8269 13.4256"
-        stroke="#9F83F6"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
-
-    <a href="" class="p-3">المستخدمين</a>
+    <a [routerLink]="['/adminPanel/superMarket']" class="p-3">سوبرماركت</a>
   </li>
 </ul>

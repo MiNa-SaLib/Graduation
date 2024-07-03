@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder, ReactiveFormsModule } from '@angular/forms';
-import { RestaurantsService } from '../../../Services/restaurants.service';
+import {
+  FormGroup,
+  FormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { DoctorsService } from '../../../Services/doctors.service';
 import { CommonModule } from '@angular/common';
-import { json } from 'express';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-doctors-add',
@@ -13,48 +17,94 @@ import { json } from 'express';
   styleUrl: './doctors-add.component.css',
 })
 export class DoctorsAddComponent {
+  formData: FormData;
+  image: any;
   doctorData: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private doctorsService: DoctorsService
+    private doctorService: DoctorsService,
+    private navigate: Router
   ) {
+    this.formData = new FormData();
     this.doctorData = this.formBuilder.group({
-      name: [''],
-      street: [''],
-      city: [''],
-      descriptionOfPlace: [''],
-      linkOfPlace: [''],
-      phoneNumber: [''],
-      startWork: [''],
-      endWork: [''],
-      specialization: [''],
-      latitude: [''],
-      longitude: [''],
-      // hasDelivery: new FormControl(''),
-      // imageFiles: new FormArray([]),
+      Name: ['', [Validators.required]],
+      Street: ['', Validators.required],
+      PhoneNumber: ['', [Validators.required]],
+      City: ['', [Validators.required]],
+      DescriptionOfPlace: ['', [Validators.required]],
+      StartWork: ['', [Validators.required]],
+      EndWork: ['', [Validators.required]],
+      Latitude: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^(-?\d{1,2}(\.\d+)?|90(\.0+)?)$/),
+        ],
+      ],
+      Longitude: [
+        '',
+        [
+          Validators.required,
+          Validators.pattern(/^(-?\d{1,3}(\.\d+)?|180(\.0+)?)$/),
+        ],
+      ],
+      files: ['', [Validators.required]],
+      LinkOfPlace: [
+        '',
+        [
+          Validators.pattern(
+            /^(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/
+          ),
+        ],
+      ],
+      specialization: ['', [Validators.required]],
+      // HasDelivery: [''],
     });
+  }
+  processFile(event: any) {
+    let file = event.target.files[0];
+    console.log(file);
+    this.formData.append('files', file, file.name);
+    this.image = this.formData.get('files');
   }
 
   send() {
-    let obj = {
-      name: this.doctorData.get('name')?.value,
-      phoneNumber: this.doctorData.get('phoneNumber')?.value,
-      specialization: this.doctorData.get('specialization')?.value,
-      street: this.doctorData.get('street')?.value,
-      city: this.doctorData.get('city')?.value,
-      descriptionOfPlace: this.doctorData.get('descriptionOfPlace')?.value,
-      linkOfPlace: this.doctorData.get('linkOfPlace')?.value,
-      latitude: parseFloat(this.doctorData.get('latitude')?.value),
-      longitude: parseFloat(this.doctorData.get('longitude')?.value),
-      startWork: this.doctorData.get('startWork')?.value,
-      endWork: this.doctorData.get('endWork')?.value,
-    };
-
-    // formData.forEach((key, ele) => console.log(key, ele));
-    console.log(JSON.stringify(obj));
-    this.doctorsService.createDoctor(JSON.stringify(obj)).subscribe(
+    this.formData.append('Name', this.doctorData.controls['Name'].value);
+    this.formData.append(
+      'specialization',
+      this.doctorData.controls['specialization'].value
+    );
+    this.formData.append(
+      'LinkOfPlace',
+      this.doctorData.controls['LinkOfPlace'].value
+    );
+    this.formData.append(
+      'PhoneNumber',
+      this.doctorData.controls['PhoneNumber'].value
+    );
+    this.formData.append('Street', this.doctorData.controls['Street'].value);
+    this.formData.append('City', this.doctorData.controls['City'].value);
+    this.formData.append(
+      'DescriptionOfPlace',
+      this.doctorData.controls['DescriptionOfPlace'].value
+    );
+    this.formData.append(
+      'Latitude',
+      this.doctorData.controls['Latitude'].value
+    );
+    this.formData.append(
+      'Longitude',
+      this.doctorData.controls['Longitude'].value
+    );
+    this.formData.append(
+      'StartWork',
+      this.doctorData.controls['StartWork'].value
+    );
+    this.formData.append('EndWork', this.doctorData.controls['EndWork'].value);
+    this.doctorService.createDoctor(this.formData).subscribe(
       (res) => {
-        console.log(res.message);
+        console.log(res);
+        this.navigate.navigate(['/adminPanel/doctors']);
       },
       (error) => {
         console.log(error);

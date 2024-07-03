@@ -1,1 +1,359 @@
-<p>play-station-add works!</p>
+<form [formGroup]="playStationData">
+  <div class="row all">
+    <div class="resData col-8">
+      <h1>بيانات <span>بلاي ستيشن</span></h1>
+      <div class="row">
+        <div class="col">
+          <label for="">اسم المكان</label>
+          <input
+            #Name
+            formControlName="Name"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('Name')?.invalid &&
+              (playStationData.get('Name')?.dirty ||
+                playStationData.get('Name')?.touched)
+            "
+          >
+            <small
+              class="text-danger p-1"
+              *ngIf="playStationData.get('Name')?.errors?.['required']"
+            >
+              الاسم مطلوب
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <label for="">رقم الهاتف</label>
+          <input
+            #Phone
+            formControlName="PhoneNumber"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('PhoneNumber')?.invalid &&
+              (playStationData.get('PhoneNumber')?.dirty ||
+                playStationData.get('PhoneNumber')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('PhoneNumber')?.errors?.['required']"
+            >
+              الرقم مطلوب
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">سعر الساعة</label>
+          <input
+            formControlName="PriceOfHour"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('PriceOfHour')?.invalid &&
+              (playStationData.get('PriceOfHour')?.dirty ||
+                playStationData.get('PriceOfHour')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('PriceOfHour')?.errors?.['required']"
+            >
+              السعر مطلوب
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <label for="">رابط المكان</label>
+          <input
+            #LinkOfPlace
+            formControlName="LinkOfPlace"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('LinkOfPlace')?.invalid &&
+              (playStationData.get('LinkOfPlace')?.dirty ||
+                playStationData.get('LinkOfPlace')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('LinkOfPlace')?.errors?.['pattern']"
+            >
+              يجب ادخال رابط صحيح
+            </small>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label for="">المدينة</label>
+          <input
+            #City
+            formControlName="City"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('City')?.invalid &&
+              (playStationData.get('City')?.dirty ||
+                playStationData.get('City')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('City')?.errors?.['required']"
+            >
+              المدينة مطلوبة
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <label for="">الشارع</label>
+          <input
+            #Street
+            formControlName="Street"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('Street')?.invalid &&
+              (playStationData.get('Street')?.dirty ||
+                playStationData.get('Street')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('Street')?.errors?.['required']"
+            >
+              الشارع مطلوب
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">خطوط الطول</label>
+          <input
+            #Latitude
+            formControlName="Latitude"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('Latitude')?.invalid &&
+              (playStationData.get('Latitude')?.dirty ||
+                playStationData.get('Latitude')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('Latitude')?.errors?.['required']"
+            >
+              يجب تحديد خطوط الطول
+            </small>
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('Latitude')?.errors?.['pattern']"
+            >
+              يجب ان يكون صحيح
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <label for="">دوائر العرض</label>
+          <input
+            #Longitude
+            formControlName="Longitude"
+            type="text"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('Longitude')?.invalid &&
+              (playStationData.get('Longitude')?.dirty ||
+                playStationData.get('Longitude')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('Longitude')?.errors?.['required']"
+            >
+              يجب تحديد دوائر العرض
+            </small>
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('Longitude')?.errors?.['pattern']"
+            >
+              يجب ان يكون صحيح
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row times">
+        <div class="col">
+          <label for="">ميعاد فتح</label>
+          <input
+            #StartWork
+            formControlName="StartWork"
+            type="datetime-local"
+            value="2017-06-01T08:30"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('StartWork')?.invalid &&
+              (playStationData.get('StartWork')?.dirty ||
+                playStationData.get('StartWork')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('StartWork')?.errors?.['required']"
+            >
+              التوقيت مطلوب
+            </small>
+          </div>
+        </div>
+        <div class="col">
+          <label for="">ميعاد غلق</label>
+          <input
+            #EndWork
+            formControlName="EndWork"
+            type="datetime-local"
+            class="form-control"
+          />
+          <div
+            *ngIf="
+              playStationData.get('EndWork')?.invalid &&
+              (playStationData.get('EndWork')?.dirty ||
+                playStationData.get('EndWork')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('EndWork')?.errors?.['required']"
+            >
+              التوقيت مطلوب
+            </small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="">الوصف</label>
+          <textarea
+            #DescriptionOfPlace
+            formControlName="DescriptionOfPlace"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+          ></textarea>
+          <div
+            *ngIf="
+              playStationData.get('DescriptionOfPlace')?.invalid &&
+              (playStationData.get('DescriptionOfPlace')?.dirty ||
+                playStationData.get('DescriptionOfPlace')?.touched)
+            "
+          >
+            <small
+              class="text-danger d-block"
+              *ngIf="playStationData.get('DescriptionOfPlace')?.errors?.['required']"
+            >
+              الوصف مطلوب
+            </small>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col resphoto">
+      <div class="restaurantPhoto mb-3">
+        <p>صورة مصغرة</p>
+        <label for="formFile" class="custom-file-upload">
+          <svg
+            width="67"
+            height="70"
+            viewBox="0 0 67 70"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M65.1217 68C62.984 61.3349 58.7855 55.521 53.1315 51.3963C47.4767 47.2716 40.6584 45.049 33.6593 45.049C26.6602 45.049 19.8419 47.2716 14.1874 51.3963C8.53297 55.521 4.33439 61.3349 2.19708 68H65.1217Z"
+              fill="#9F83F6"
+              stroke="black"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M33.659 45.0906C45.5582 45.0906 55.2046 35.4444 55.2046 23.5453C55.2046 11.6461 45.5582 2 33.659 2C21.7599 2 12.1137 11.6461 12.1137 23.5453C12.1137 35.4444 21.7599 45.0906 33.659 45.0906Z"
+              fill="#9F83F6"
+              stroke="black"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M40.6945 31.8815C40.6945 31.8815 38.9068 35.399 33.6593 35.399C28.4118 35.399 26.6241 31.8815 26.6241 31.8815"
+              fill="#9F83F6"
+            />
+            <path
+              d="M40.6945 31.8815C40.6945 31.8815 38.9068 35.399 33.6593 35.399C28.4118 35.399 26.6241 31.8815 26.6241 31.8815"
+              stroke="black"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M54.814 19.4432C54.7656 19.4435 54.7178 19.4437 54.6699 19.4437C48.4071 19.4437 42.7845 16.7038 38.9351 12.3573C35.0857 16.7039 29.463 19.4438 23.2003 19.4438C19.5636 19.4438 16.1427 18.5199 13.1595 16.8939C15.9623 8.24989 24.0806 2 33.6586 2C44.155 2 52.8982 9.50599 54.814 19.4432Z"
+              fill="#9F83F6"
+              stroke="black"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <span
+            ><b>انقر</b><br />
+            لاضافة صورة مصغرة</span
+          >
+        </label>
+        <input
+          formControlName="files"
+          #imageFiles
+          type="file"
+          (change)="processFile($event)"
+          id="formFile"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="submit col-8">
+      <button
+        [disabled]="playStationData.invalid"
+        (click)="send()"
+        type="submit"
+        class="btn btn-primary"
+      >
+        اضافة بلاي ستيشن
+      </button>
+    </div>
+  </div>
+</form>

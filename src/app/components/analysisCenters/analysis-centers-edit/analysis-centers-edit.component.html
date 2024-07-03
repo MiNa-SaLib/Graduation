@@ -1,8 +1,12 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (center of center; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="['/adminPanel/analysisCenter/centerEditSpecific', center.id]"
+  >
     <img
-      [src]="center.images[0]"
+      [src]="center.images[0]?.image"
       class="card-img-top"
       alt="image not available"
     />

@@ -1,9 +1,64 @@
-<nav class="navbar navbar-expand-sm navbar-light bg-light bg-danger">
-  <div class="container">
-    <img src="assets/1.jpg" alt="" srcset="" />
-    <a class="navbar-brand" href="#">Admin MiNa</a>
-    <button
-      class="navbar-toggler d-lg-none"
+<div class="navigation">
+  <button
+    class="btn btn-primary"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasRight"
+    aria-controls="offcanvasRight"
+    *ngIf="isScreenWide"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="20"
+      height="20"
+      viewBox="0 0 50 50"
+    >
+      <path
+        d="M 0 9 L 0 11 L 50 11 L 50 9 Z M 0 24 L 0 26 L 50 26 L 50 24 Z M 0 39 L 0 41 L 50 41 L 50 39 Z"
+      ></path>
+    </svg>
+  </button>
+
+  <button
+    class="btn btn-primary userProfile"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+  >
+    <svg
+      fill="#9f83f6"
+      viewBox="0 0 32 32"
+      xmlns="http://www.w3.org/2000/svg"
+      stroke="#9f83f6"
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke="black"
+        stroke-width="1.984"
+      >
+        <path
+          d="M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"
+        ></path>
+      </g>
+      <g id="SVGRepo_iconCarrier">
+        <path
+          d="M16 15.503A5.041 5.041 0 1 0 16 5.42a5.041 5.041 0 0 0 0 10.083zm0 2.215c-6.703 0-11 3.699-11 5.5v3.363h22v-3.363c0-2.178-4.068-5.5-11-5.5z"
+        ></path>
+      </g>
+    </svg>
+    <span> {{ userName }}</span>
+  </button>
+
+  <!-- <span class="navbar-brand btn btn-light" href="#"</span> -->
+</div>
+<!-- <button
+      class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#collapsibleNavId"
@@ -12,37 +67,28 @@
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavId">
-      <form class="d-flex my-2 my-lg-0">
-        <div class="search">
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g clip-path="url(#clip0_149_211)">
-              <path
-                d="M12.9167 11.6667H12.2583L12.025 11.4417C12.8417 10.4917 13.3333 9.25833 13.3333 7.91667C13.3333 4.925 10.9083 2.5 7.91667 2.5C4.925 2.5 2.5 4.925 2.5 7.91667C2.5 10.9083 4.925 13.3333 7.91667 13.3333C9.25833 13.3333 10.4917 12.8417 11.4417 12.025L11.6667 12.2583V12.9167L15.8333 17.075L17.075 15.8333L12.9167 11.6667ZM7.91667 11.6667C5.84167 11.6667 4.16667 9.99167 4.16667 7.91667C4.16667 5.84167 5.84167 4.16667 7.91667 4.16667C9.99167 4.16667 11.6667 5.84167 11.6667 7.91667C11.6667 9.99167 9.99167 11.6667 7.91667 11.6667Z"
-                fill="#9F83F6"
-              />
-            </g>
-            <defs>
-              <clipPath id="clip0_149_211">
-                <rect width="20" height="20" fill="white" />
-              </clipPath>
-            </defs>
-          </svg>
+    </button> -->
 
-          <input
-            class="form-control me-sm-2"
-            type="text"
-            placeholder="بحث سريع"
-          />
-        </div>
-      </form>
-    </div>
-  </div>
-</nav>
+<!-- <div
+      [hidden]="isScreenWide"
+      class="collapse navbar-collapse"
+      id="collapsibleNavId"
+    >
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div> -->

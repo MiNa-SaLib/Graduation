@@ -1,8 +1,12 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (workSpace of workSpace; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="['/adminPanel/workSpace/workSpaceEditSpecific', workSpace.id]"
+  >
     <img
-      [src]="workSpace.images[0]"
+      [src]="workSpace.images[0]?.image"
       class="card-img-top"
       alt="image not available"
     />

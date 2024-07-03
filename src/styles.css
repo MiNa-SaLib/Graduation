@@ -12,3 +12,46 @@ body{
 * {
   font-family: 'El Messiri', sans-serif !important;
 }
+
+/*
+general styles for each edit component
+*/
+a{
+  text-decoration: none  !important;
+  width: 100% !important;
+}
+.card{
+  background: transparent !important;
+  border: none !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 240px !important;
+
+
+}
+.card img{
+  width:200px !important;
+  height: 200px !important;
+  border: 2px solid black !important;
+  border-radius: 14px !important;
+  -webkit-border-radius: 14px !important;
+  -moz-border-radius: 14px !important;
+  -ms-border-radius: 14px !important;
+  -o-border-radius: 14px !important;
+}
+.card p{
+  font-size: 30px  !important;
+  margin: 0 !important;
+}
+.card-body{
+  padding: 5px !important;
+  width: 100% !important;
+}
+.grid-container {
+  display: grid !important;
+  grid-gap: 10px !important;
+  padding: 10px !important;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+}

@@ -1,8 +1,12 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (pharmacy of pharmacies; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="['/adminPanel/pharmacies/pharmacyEditSpecific', pharmacy.id]"
+  >
     <img
-      [src]="pharmacy.images[0]"
+      [src]="pharmacy.images[0]?.image"
       class="card-img-top"
       alt="image not available"
     />

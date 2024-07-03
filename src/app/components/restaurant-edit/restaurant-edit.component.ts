@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import {
+  Router,
+  RouterLink,
+  RouterModule,
+  RouterOutlet,
+} from '@angular/router';
 import { RestaurantsService } from '../../Services/restaurants.service';
 import { CommonModule } from '@angular/common';
 
@@ -18,7 +23,7 @@ export class RestaurantEditComponent {
   }
   getAllRestaurants() {
     this.restaurantService.getAllRestaurants().subscribe((data) => {
-      console.log(data[1].images[0].image);
+      // console.log(data[1].images[0].image);
 
       this.restaurants = data;
     });

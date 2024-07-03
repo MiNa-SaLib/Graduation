@@ -1,8 +1,12 @@
-<div class="row gap-5 p-2">
+<div class="grid-container">
   @for (doctor of doctors; track $index) {
-  <a class="card col-3" style="width: 18rem" [routerLink]="['/path']">
+  <a
+    class="card"
+    style="width: 18rem"
+    [routerLink]="['/adminPanel/doctors/doctorEditSpecific', doctor.id]"
+  >
     <img
-      [src]="doctor.images[0]"
+      [src]="doctor.images[0]?.image"
       class="card-img-top"
       alt="image not available"
     />

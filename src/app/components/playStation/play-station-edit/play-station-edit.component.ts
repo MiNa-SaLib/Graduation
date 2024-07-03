@@ -13,9 +13,9 @@ export class PlayStationEditComponent implements OnInit {
   playStation: any;
   constructor(private playStationService: PlayStationService) {}
   ngOnInit(): void {
-    this.getAllRestaurants();
+    this.getAllPlayStations();
   }
-  getAllRestaurants() {
+  getAllPlayStations() {
     this.playStationService.getAllPlayStations().subscribe((data) => {
       this.playStation = data;
     });
